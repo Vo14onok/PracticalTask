@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="QA Automation practical suite" verbose="1">
+    <test name="QA Automation practical task">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="testcases.Task" />
+        </classes>
+    </test>
+</suite>
