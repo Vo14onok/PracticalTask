@@ -20,10 +20,11 @@ public class ChapterOnePage {
 
     public HomePage returnToHomePage() {
         logger.info("Click on 'Home page' button.");
-        $("p a").shouldHave(Condition.text("Home Page")).click();
-        sleep(3000);
+        $(".mainbody a").click();
         return new HomePage();
     }
+
+    // --- "описать первую (home) и вторую (chapter1) страницы как Page Object" ? ---
 
     public ChapterOnePage setCheckboxRadioButton() {
         logger.info("Seе checkbox on radio button.");
