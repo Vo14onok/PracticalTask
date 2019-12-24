@@ -21,29 +21,29 @@ public class HomePage {
 
     // --- "описать первую (home) и вторую (chapter1) страницы как Page Object" ? ---
 
-    public ChapterOnePage clickOnChapterTwo() {
-        logger.info("Click on Chapter2.");
-        chapters.get(1).click();
-        return new ChapterOnePage();
-    }
-
-    public ChapterOnePage clickOnChapterThree() {
-        logger.info("Click on Chapter3.");
-        chapters.get(2).click();
-        return new ChapterOnePage();
-    }
-
-    public ChapterOnePage clickOnChapterFour() {
-        logger.info("Click on Chapter4.");
-        chapters.get(3).click();
-        return new ChapterOnePage();
-    }
-
-    public ChapterOnePage clickOnChapterEight() {
-        logger.info("Click on Chapter8.");
-        chapters.get(4).click();
-        return new ChapterOnePage();
-    }
+//    public ChapterTwoPage clickOnChapterTwo() {
+//        logger.info("Click on Chapter2.");
+//        chapters.get(1).click();
+//        return new ChapterTwoPage();
+//    }
+//
+//    public ChapterThreePage clickOnChapterThree() {
+//        logger.info("Click on Chapter3.");
+//        chapters.get(2).click();
+//        return new ChapterThreePage();
+//    }
+//
+//    public ChapterFourPage clickOnChapterFour() {
+//        logger.info("Click on Chapter4.");
+//        chapters.get(3).click();
+//        return new ChapterFourPage();
+//    }
+//
+//    public ChapterEightPage clickOnChapterEight() {
+//        logger.info("Click on Chapter8.");
+//        chapters.get(4).click();
+//        return new ChapterEightPage();
+//    }
 
     public HomePage textInput(String text) {
         logger.info("Type text to input field. Text: " + text);
