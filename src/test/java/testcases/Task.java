@@ -2,15 +2,10 @@ package testcases;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.HomePage;
 
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
 
 public class Task {
 
@@ -19,11 +14,11 @@ public class Task {
     @BeforeSuite
     public void setUp() {
         Configuration.browser = WebDriverRunner.CHROME;
-        Configuration.timeout = 10000;
+        Configuration.timeout = 5000;
         Configuration.browserSize = "1920x1080";
     }
 
-    @BeforeTest
+    @BeforeMethod
     public void precondition() {
         open("http://book.theautomatedtester.co.uk/");
     }
@@ -36,7 +31,7 @@ public class Task {
                 .returnToHomePage();
     }
 
-    @AfterSuite
+    @AfterMethod
     public void tearDown() {
         WebDriverRunner.getWebDriver().close();
     }

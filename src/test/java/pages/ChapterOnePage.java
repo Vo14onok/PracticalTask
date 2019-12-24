@@ -1,10 +1,10 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Condition.exist;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 public class ChapterOnePage {
@@ -13,7 +13,7 @@ public class ChapterOnePage {
 
     public ChapterOnePage checkTargetText(String text) {
         logger.info("Check text: " + text);
-        $("body").shouldHave(Condition.text(text));
+        $("body").shouldHave(text(text));
         logger.info("Text on page.");
         return this;
     }
@@ -40,7 +40,7 @@ public class ChapterOnePage {
 
     public ChapterOnePage clickOnSeleniumTypeCheckbox() {
         logger.info("Set Selenium type checkbox.");
-        $(By.name("selected(1234)")).click();
+        $("[name='selected(1234)']").click();
         return this;
     }
 
@@ -52,7 +52,7 @@ public class ChapterOnePage {
 
     public PopUpWindow clickOnFirstMultipleWindow() {
         logger.info("CLick on first multiple window button.");
-        $("#multiplewindow.multiplewindow").click();
+        $(".multiplewindow").click();
         switchTo().window(1);
         logger.info("Switch to popup window.");
         return new PopUpWindow();
@@ -60,7 +60,7 @@ public class ChapterOnePage {
 
     public PopUpWindow clickOnSecondMultipleWindow() {
         logger.info("CLick on second multiple window button.");
-        $("#multiplewindow.multiplewindow2").click();
+        $(".multiplewindow2").click();
         switchTo().window(1);
         logger.info("Switch to popup window.");
         return new PopUpWindow();
@@ -81,7 +81,7 @@ public class ChapterOnePage {
     public ChapterOnePage checkAJAXText() {
         logger.info("Check AJAX text.");
         SelenideElement ajaxTextElement = $("#ajaxdiv p");
-        ajaxTextElement.shouldBe(Condition.exist);
+        ajaxTextElement.shouldBe(exist);
         logger.info("AJAX loaded text: " + ajaxTextElement.getText());
         return this;
     }
